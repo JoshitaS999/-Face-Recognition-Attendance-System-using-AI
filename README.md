@@ -1,4 +1,5 @@
-#Face Recognition Attendance System
+#Face Recognition Attendance System-
+
 A web-based attendance management application built with Python, Flask, OpenCV, and machine learning. It detects faces through a webcam, identifies registered students using a K-Nearest Neighbors (KNN) classifier, and records attendance with the student's name, roll number, and time.
 Features
 - Face detection: Uses the Haar Cascade frontal-face detector from OpenCV.
