@@ -24,30 +24,6 @@ joblib	Saving and loading the trained model
 SQLite	Administrator credential storage
 HTML/CSS	Web pages and dashboard
 
-
-Project Structure
-Face-Recognition-Attendance/
-│
-├── app.py
-├── init_admin.py
-├── requirements.txt
-├── admin.db
-├── haarcascade_frontalface_default.xml
-│
-├── Attendance/
-│   └── Attendance-MM_DD_YY.csv
-│
-├── static/
-│   ├── faces/
-│   │   └── StudentName_RollNumber/
-│   │       ├── StudentName_0.jpg
-│   │       └── ...
-│   └── face_recognition_model.pkl
-│
-└── templates/
-    ├── index.html
-    ├── login.html
-    └── admin.html
 Attendance/, static/, and static/faces/ are created by the application when needed. The HTML templates must be present in the templates/ folder. The trained model is generated after student face images have been registered.
 Requirements
 - Python 3.9 or later
@@ -129,20 +105,6 @@ Important Notes and Limitations
 - The /upload route accepts an image upload, but the supplied code does not show authentication protection for that route.
 - The current code uses a placeholder Flask secret key and enables Flask debug mode. These settings are suitable only for local development, not production.
 - Face images and attendance records are personal data. Obtain appropriate consent, restrict access, and store them securely.
-Troubleshooting
-Problem	What to check
-Webcam does not open	Check camera connection and permissions; close other apps using the camera.
-cv2.imshow() or GUI error	Replace opencv-python-headless with opencv-python for local desktop use.
-Model file not found	Register at least one student and ensure model training completes.
-Template not found	Confirm the required HTML files are inside the templates/ directory.
-Admin login fails	Run python init_admin.py and check that admin.db is in the project directory.
-No attendance appears	Confirm a student is registered, the model exists, and the face is visible to the camera.
 
 
-Future Enhancements
-- Improve recognition using face embeddings and a modern face-recognition model.
-- Add liveness detection.
-- Add attendance reports by date, student, and class.
-- Add export options and improved dashboard analytics.
-- Add stronger input validation, authorization checks, CSRF protection, and secure configuration.
-- Add tests and deployment-specific camera/upload workflows.
+
